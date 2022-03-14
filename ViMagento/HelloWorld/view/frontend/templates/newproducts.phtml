@@ -1,0 +1,9 @@
+
+<form action="<?php echo $custmlogin->getPostActionUrl() ?>" method="post" id="login-form" onSubmit="return validate(this);">
+<h2>New Products</h2>
+
+<ul>
+    <?php   foreach($block->getProduct() as $product):?>
+        <li><?php echo $product->getName();?></li>
+    <?php endforeach;?>
+</ul>
