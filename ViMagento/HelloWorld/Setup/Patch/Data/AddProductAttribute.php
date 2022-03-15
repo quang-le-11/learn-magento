@@ -46,10 +46,11 @@ class AddProductAttribute implements DataPatchInterface
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
-        $eavSetup->addAttribute('catalog_product', 'datapatch', [
+        $eavSetup->addAttribute('catalog_product', 'helloworld', [
             'type' => 'int',
-            'label' => 'Use Data Patch',
-            'input' => 'text',
+            'label' => 'HelloWorld ViMagento',
+            'input' => 'select',
+            'source' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
             'default' => 0,
             'global' => ScopedAttributeInterface::SCOPE_STORE,
             'visible' => true,
@@ -75,10 +76,5 @@ class AddProductAttribute implements DataPatchInterface
     public function getAliases()
     {
         return [];
-    }
-
-    public static function getVersion()
-    {
-        return '1.0.1';
     }
 }

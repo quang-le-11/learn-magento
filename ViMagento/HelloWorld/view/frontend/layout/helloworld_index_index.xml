@@ -5,17 +5,25 @@
  * See COPYING.txt for license details.
  */
 -->
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      layout="3columns"
-      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="3columns" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <update handle="customer_account"/>
-
+<!--    <head>-->
+<!--        <remove src="css/styles-m.css" />-->
+<!--    </head>-->
     <body>
         <referenceContainer name="content">
-            <block class="ViMagento\HelloWorld\Block" name="newproduct" template="ViMagento_HelloWorld::newproducts.phtml" cacheable="false"/>
-
-<!--            <block class="Magento\Wishlist\Block\Customer\Sharing" name="wishlist.sharing" template="Magento_Wishlist::sharing.phtml" cacheable="false"/>-->
-<!--            <block class="Magento\Catalog\Block\Product\ListProduct" name="category.products.list" as="product_list" template="Magento_Catalog::product/list.phtml"/>-->
+            <block class="ViMagento\HelloWorld\Block\Newproduct" name="newproduct" template="ViMagento_HelloWorld::newproducts.phtml" cacheable="false"/>
+            <block class="Magento\Wishlist\Block\Customer\Sharing" name="wishlist.sharing" template="Magento_Wishlist::sharing.phtml" cacheable="false"/>
         </referenceContainer>
+
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="helloworld-link">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">Helloworld landing</argument>
+                    <argument name="path" xsi:type="string">helloworld/index/index</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+
     </body>
 </page>

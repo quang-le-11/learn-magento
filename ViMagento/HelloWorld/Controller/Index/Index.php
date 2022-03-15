@@ -21,6 +21,7 @@ class Index extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+//        return $this->_pageFactory->create();
 
         $data = $this->postFactory->create()->getCollection();
         foreach ($data as $value) {
