@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="ViMagento_HelloWorld::menu" title="Custom Menu" module="ViMagento_HelloWorld" sortOrder="10" resource="ViMagento_HelloWorld::menu"/>
+        <add id="ViMagento_HelloWorld::create" title="Create" module="ViMagento_HelloWorld" sortOrder="10" parent="ViMagento_HelloWorld::menu" action="custommenu/create/index" resource="ViMagento_HelloWorld::create"/>
+        <add id="ViMagento_HelloWorld::delete" title="Delete" module="ViMagento_HelloWorld" sortOrder="20" parent="ViMagento_HelloWorld::menu" action="custommenu/delete/index" resource="ViMagento_HelloWorld::delete"/>
+        <add id="ViMagento_HelloWorld::view" title="View" module="ViMagento_HelloWorld" sortOrder="30" parent="ViMagento_HelloWorld::menu" action="custommenu/view/index" resource="ViMagento_HelloWorld::view"/>
+    </menu>
+</config>
