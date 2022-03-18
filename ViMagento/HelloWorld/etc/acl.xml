@@ -9,6 +9,13 @@
                     <resource id="ViMagento_HelloWorld::Configuration" title="Configuration" sortOrder="30" />
                 </resource>
             </resource>
+<!--            <resource id="Magento_Backend::stores">-->
+<!--                <resource id="Magento_Backend::stores_settings">-->
+<!--                    <resource id="Magento_Config::config">-->
+<!--                        <resource id="ViMagento_HelloWorld::helloworld_config" title="Hello World"/>-->
+<!--                    </resource>-->
+<!--                </resource>-->
+<!--            </resource>-->
         </resources>
     </acl>
 </config>

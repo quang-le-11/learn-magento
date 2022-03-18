@@ -41,6 +41,9 @@ class AddProductAttribute implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
+    /**
+     * Apply là hàm chính, mọi sửa đổi bạn muốn sẽ được viết ở đây
+     * */
     public function apply()
     {
         /** @var EavSetup $eavSetup */
@@ -65,14 +68,21 @@ class AddProductAttribute implements DataPatchInterface
     /**
      * {@inheritdoc}
      */
+    /**
+     * getDependencies() định nghĩa những phụ thuộc của patch
+    */
     public static function getDependencies()
     {
+//        return [
+//            \SomeVendor\SomeModule\Setup\Patch\Data\SomePatch::class
+//        ];
         return [];
     }
 
     /**
      * {@inheritdoc}
      */
+    //getAliases() tên định danh cho patch
     public function getAliases()
     {
         return [];

@@ -30,7 +30,7 @@ class Index extends \Magento\Framework\App\Action\Action
             echo "</pre>";
         }
  //       return $this->_redirect('hello/index/index1');
-//      return $this->_forward('Index1', 'Index', 'hello' );
+          //return $this->_forward('Index1', 'Index', 'hello' );
     }
 
 }

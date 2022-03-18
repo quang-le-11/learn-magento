@@ -19,6 +19,14 @@
                     <label>Post Content</label>
                     <comment>This is post content.</comment>
                 </field>
+                <field id="color" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Color</label>
+                    <source_model>ViMagento\HelloWorld\Model\Config\Source\Color</source_model>
+                </field>
+                <field id="language" translate="label" type="multiselect" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Language</label>
+                    <source_model>ViMagento\HelloWorld\Model\Config\Source\Language</source_model>
+                </field>
             </group>
         </section>
     </system>

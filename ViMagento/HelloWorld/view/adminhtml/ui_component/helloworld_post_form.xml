@@ -25,10 +25,11 @@
         </buttons>
         <namespace>helloworld_post_form</namespace>
         <dataScope>data</dataScope>
-        <deps>
-            <dep>helloworld_post_form.helloworld_post_form_data_source</dep>
-        </deps>
+<!--        <deps>-->
+<!--            <dep>helloworld_post_form.helloworld_post_form_data_source</dep>-->
+<!--        </deps>-->
     </settings>
+
     <dataSource name="helloworld_post_form_data_source">
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
@@ -38,9 +39,10 @@
         <settings>
             <submitUrl path="helloworld/post/save"/>
         </settings>
+
         <dataProvider class="ViMagento\HelloWorld\Model\Config\DataProvider" name="helloworld_post_form_data_source">
             <settings>
-                <requestFieldName>id</requestFieldName>
+                <requestFieldName>post_id</requestFieldName>
                 <primaryFieldName>post_id</primaryFieldName>
             </settings>
         </dataProvider>
