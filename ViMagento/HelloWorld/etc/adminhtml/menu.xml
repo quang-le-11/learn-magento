@@ -1,8 +1,54 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-
+instance" xsi:noNamespaceSchemaLocation=
+    "urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
-        <add id="ViMagento_HelloWorld::vimagento" title="ViMagento" module="ViMagento_HelloWorld" sortOrder="41" resource="ViMagento_HelloWorld::vimagento"/>
-        <add id="ViMagento_HelloWorld::parent" title="ViMagento Post" module="ViMagento_HelloWorld" sortOrder="10" resource="ViMagento_HelloWorld::menu" parent="ViMagento_HelloWorld::vimagento"/>
+        <add
+            id="ViMagento_HelloWorld::helloworld"
+            title="HelloWorld"
+            module="ViMagento_HelloWorld"
+            sortOrder="50"
+            parent="Magento_Backend::marketing"
+            resource="ViMagento_HelloWorld::helloworld"
+        />
+        <add
+            id="ViMagento_HelloWorld::index"
+            title="Helloworld Index"
+            module="ViMagento_HelloWorld"
+            sortOrder="55"
+            parent="ViMagento_HelloWorld::helloworld"
+            action="helloworld/index/"
+            resource="ViMagento_HelloWorld::index"
+        />
+        <add
+            id="ViMagento_HelloWorld::subscription"
+            title="Subscriptions"
+            module="ViMagento_HelloWorld"
+            sortOrder="70"
+            parent="ViMagento_HelloWorld::helloworld"
+            action="helloworld/subscription/"
+            resource="ViMagento_HelloWorld::subscription"
+        />
+        <add
+            id="ViMagento_HelloWorld::component"
+            title="Components"
+            module="ViMagento_HelloWorld"
+            sortOrder="80"
+            parent="ViMagento_HelloWorld::helloworld"
+            action="helloworld/component/"
+            resource="ViMagento_HelloWorld::helloworld"
+        />
+<!--        Thanh phan menu-->
+        <add id="ViMagento_HelloWorld::vimagento"
+             title="ViMagento" module="ViMagento_HelloWorld"
+             sortOrder="41"
+             resource="ViMagento_HelloWorld::menu"/>
+        <add id="ViMagento_HelloWorld::parent"
+             title="ViMagento Post"
+             module="ViMagento_HelloWorld"
+             sortOrder="10"
+             resource="ViMagento_HelloWorld::menu"
+             parent="ViMagento_HelloWorld::vimagento"/>
         <add id="ViMagento_HelloWorld::post" title="Manage Posts" module="ViMagento_HelloWorld" sortOrder="10" action="helloworld/post/index" resource="ViMagento_HelloWorld::post" parent="ViMagento_HelloWorld::parent"/>
         <add id="ViMagento_HelloWorld::configuration" title="Configuration" module="ViMagento_HelloWorld" sortOrder="20" parent="ViMagento_HelloWorld::parent" action="adminhtml/system_config" resource="ViMagento_HelloWorld::parent"/>
     </menu>

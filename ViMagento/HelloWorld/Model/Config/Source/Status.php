@@ -1,6 +1,6 @@
 <?php
 
-namespace ViMagento\HelloWorld\Model\Config;
+namespace ViMagento\HelloWorld\Model\Config\Source;
 
 class Status implements \Magento\Framework\Option\ArrayInterface
 {

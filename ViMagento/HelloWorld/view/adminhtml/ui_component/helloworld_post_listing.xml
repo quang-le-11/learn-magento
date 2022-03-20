@@ -93,7 +93,7 @@
                 <filter>select</filter>
                 <label translate="true">Status</label>
                 <dataType>select</dataType>
-                <options class="ViMagento\HelloWorld\Model\Config\Status"/>
+                <options class="ViMagento\HelloWorld\Model\Config\Source\Status"/>
             </settings>
         </column>
         <column name="content" sortOrder="40">
@@ -102,10 +102,10 @@
                 <label translate="true">Content</label>
             </settings>
         </column>
-        <actionsColumn name="actions" class="ViMagento\HelloWorld\Ui\Component\Listing\Grid\Column\Action">
-            <settings>
-                <indexField>post_id</indexField>
-            </settings>
-        </actionsColumn>
+<!--        <actionsColumn name="actions" class="ViMagento\HelloWorld\Ui\Component\Listing\Grid\Column\Action">-->
+<!--            <settings>-->
+<!--                <indexField>post_id</indexField>-->
+<!--            </settings>-->
+<!--        </actionsColumn>-->
     </columns>
 </listing>

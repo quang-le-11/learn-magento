@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">helloworld_post_form.helloworld_post_form_data_source</item>
@@ -8,12 +7,10 @@
         <item name="label" xsi:type="string" translate="true">Post Information</item>
         <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
     </argument>
-
-
     <settings>
         <buttons>
             <button name="back">
-                <url path="helloworld/post/index"/>
+<!--                <url path="helloworld/post/index"/>-->
                 <class>back</class>
                 <label translate="true">Back</label>
             </button>
@@ -25,11 +22,10 @@
         </buttons>
         <namespace>helloworld_post_form</namespace>
         <dataScope>data</dataScope>
-<!--        <deps>-->
-<!--            <dep>helloworld_post_form.helloworld_post_form_data_source</dep>-->
-<!--        </deps>-->
+        <deps>
+            <dep>helloworld_post_form.helloworld_post_form_data_source</dep>
+        </deps>
     </settings>
-
     <dataSource name="helloworld_post_form_data_source">
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
@@ -39,15 +35,13 @@
         <settings>
             <submitUrl path="helloworld/post/save"/>
         </settings>
-
         <dataProvider class="ViMagento\HelloWorld\Model\Config\DataProvider" name="helloworld_post_form_data_source">
             <settings>
-                <requestFieldName>post_id</requestFieldName>
+                <requestFieldName>id</requestFieldName>
                 <primaryFieldName>post_id</primaryFieldName>
             </settings>
         </dataProvider>
     </dataSource>
-
     <fieldset name="general" sortOrder="10">
         <settings>
             <label translate="true">Post Details</label>
@@ -99,11 +93,10 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="ViMagento\HelloWorld\Model\Config\Status"/>
+                        <options class="ViMagento\HelloWorld\Model\Config\Cource\Status"/>
                     </settings>
                 </select>
             </formElements>
         </field>
     </fieldset>
-
 </form>

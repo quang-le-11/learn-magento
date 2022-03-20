@@ -49,20 +49,7 @@ class AddProductAttribute implements DataPatchInterface
         /** @var EavSetup $eavSetup */
         $eavSetup = $this->eavSetupFactory->create(['setup' => $this->moduleDataSetup]);
 
-        $eavSetup->addAttribute('catalog_product', 'helloworld', [
-            'type' => 'int',
-            'label' => 'HelloWorld ViMagento',
-            'input' => 'select',
-            'source' => 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
-            'default' => 0,
-            'global' => ScopedAttributeInterface::SCOPE_STORE,
-            'visible' => true,
-            'used_in_product_listing' => true,
-            'user_defined' => true,
-            'required' => false,
-            'group' => 'General',
-            'sort_order' => 80,
-        ]);
+
     }
 
     /**
