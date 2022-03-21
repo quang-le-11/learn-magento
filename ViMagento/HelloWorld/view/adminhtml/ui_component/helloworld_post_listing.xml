@@ -12,7 +12,7 @@
         </deps>
         <buttons>
             <button name="add">
-                <url path="*/*/add"/>
+                <url path="*/*/addnew"/>
                 <class>primary</class>
                 <label translate="true">Add new</label>
             </button>
@@ -102,10 +102,11 @@
                 <label translate="true">Content</label>
             </settings>
         </column>
-<!--        <actionsColumn name="actions" class="ViMagento\HelloWorld\Ui\Component\Listing\Grid\Column\Action">-->
-<!--            <settings>-->
-<!--                <indexField>post_id</indexField>-->
-<!--            </settings>-->
-<!--        </actionsColumn>-->
+
+        <actionsColumn name="actions" class="ViMagento\HelloWorld\Ui\Component\Listing\Grid\Column\Action">
+            <settings>
+                <indexField>post_id</indexField>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>

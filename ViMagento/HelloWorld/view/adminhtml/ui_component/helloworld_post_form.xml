@@ -1,16 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
 <form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
-            <item name="provider" xsi:type="string">helloworld_post_form.helloworld_post_form_data_source</item>
+            <item name="provider" xsi:type="string">helloworld_post_form.a</item>
         </item>
-        <item name="label" xsi:type="string" translate="true">Post Information</item>
+        <item name="label" xsi:type="string" translate="true">Category Information</item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
         <item name="reverseMetadataMerge" xsi:type="boolean">true</item>
     </argument>
+
     <settings>
         <buttons>
             <button name="back">
-<!--                <url path="helloworld/post/index"/>-->
+                <url path="helloworld/post/index"/>
                 <class>back</class>
                 <label translate="true">Back</label>
             </button>
@@ -23,25 +32,28 @@
         <namespace>helloworld_post_form</namespace>
         <dataScope>data</dataScope>
         <deps>
-            <dep>helloworld_post_form.helloworld_post_form_data_source</dep>
+            <dep>helloworld_post_form.a</dep>
         </deps>
     </settings>
-    <dataSource name="helloworld_post_form_data_source">
+
+    <dataSource name="a">
         <argument name="data" xsi:type="array">
             <item name="js_config" xsi:type="array">
                 <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
             </item>
         </argument>
         <settings>
+<!--            <validateUrl path="catalog/category/validate"/>-->
             <submitUrl path="helloworld/post/save"/>
         </settings>
-        <dataProvider class="ViMagento\HelloWorld\Model\Config\DataProvider" name="helloworld_post_form_data_source">
+        <dataProvider class="ViMagento\HelloWorld\Model\Config\DataProvider" name="a">
             <settings>
                 <requestFieldName>id</requestFieldName>
                 <primaryFieldName>post_id</primaryFieldName>
             </settings>
         </dataProvider>
     </dataSource>
+
     <fieldset name="general" sortOrder="10">
         <settings>
             <label translate="true">Post Details</label>
@@ -93,7 +105,7 @@
             <formElements>
                 <select>
                     <settings>
-                        <options class="ViMagento\HelloWorld\Model\Config\Cource\Status"/>
+                        <options class="ViMagento\HelloWorld\Model\Config\Source\Status"/>
                     </settings>
                 </select>
             </formElements>
