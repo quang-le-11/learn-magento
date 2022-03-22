@@ -2,19 +2,23 @@
 
 namespace ViMagento\HelloWorld\Controller\Adminhtml\Post;
 
-use ViMagento\HelloWorld\Model\PostFactory;
 use Magento\Backend\App\Action;
+use ViMagento\HelloWorld\Model\PostFactory;
+use Magento\Backend\Model\View\Result\RedirectFactory;
 
 class Save extends Action
 {
+    private $resultRedirect;
     private $postFactory;
 
     public function __construct(
         Action\Context $context,
-        PostFactory $postFactory
+        PostFactory $postFactory,
+        RedirectFactory $redirectFactory
     ) {
         parent::__construct($context);
         $this->postFactory = $postFactory;
+        $this->resultRedirect = $redirectFactory;
     }
 
     public function execute()
@@ -33,15 +37,23 @@ class Save extends Action
 
         if ($id) {
             $post->load($id);
-        }
-        try {
-            $post->addData($newData);
-            $post->save();
-            $this->messageManager->addSuccessMessage(__('You saved the post.'));
-        } catch (\Exception $e) {
-            $this->messageManager->addErrorMessage(__($e->getMessage()));
+            $this->getMessageManager()->addSuccessMessage(__('Edit thành công.'));
+        } else {
+            $this->getMessageManager()->addSuccessMessage(__('Save thành công.'));
         }
 
-        return $this->resultRedirectFactory->create()->setPath('helloworld/post/index');
+        try {
+            $post->addData($newData);
+            $this->_eventManager->dispatch("vimagento_post_before_save", ['postData' => $post]);
+            $post->save();
+            return $this->resultRedirect->create()->setPath('helloworld/post/index');
+            //$this->messageManager->addSuccessMessage(__('You saved the post.'));
+        } catch (\Exception $e) {
+            //$this->messageManager->addErrorMessage(__($e->getMessage()));
+            $this->getMessageManager()->addErrorMessage(__('Save thất bại.'));
+
+        }
+
+       // return $this->resultRedirectFactory->create()->setPath('helloworld/post/index');
     }
 }
